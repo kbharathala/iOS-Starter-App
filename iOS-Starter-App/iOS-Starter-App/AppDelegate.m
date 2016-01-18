@@ -11,6 +11,7 @@
 #import "MasterTableViewController.h"
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "SignUpViewController.h"
 
 @interface AppDelegate ()
 
@@ -58,8 +59,13 @@
     [self.navController presentViewController:loginVC animated:NO completion:nil];
 }
 
-- (void) logOut {
+- (void)presentSignUpViewController {
     
+    SignUpViewController *signupVC = [[SignUpViewController alloc] init];
+    [self.navController presentViewController:signupVC animated:NO completion:nil];
+}
+
+- (void) logOut {
     [self presentLoginViewController];
 }
 

@@ -38,6 +38,7 @@
     [signUpButton setFrame:CGRectMake(0, 0, 50, 30)];
     [signUpButton setTitle:@"Signup" forState:UIControlStateNormal];
     [signUpButton setCenter:CGPointMake(width/2 + 30, height*4/7)];
+    [signUpButton addTarget:self action:@selector(signup) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:signUpButton];
     
     self.usernameField = [[UITextField alloc] init];
@@ -59,6 +60,10 @@
 -(void) login {
     // DO SOME VALIDATION THAT PASSWORD IS CORRECT FROM PARSE DB.
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] presentSWController];
+}
+
+-(void) signup {
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] presentSignUpViewController];
 }
 
 
