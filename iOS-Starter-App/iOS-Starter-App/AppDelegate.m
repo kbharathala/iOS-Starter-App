@@ -13,6 +13,8 @@
 #import "SWRevealViewController.h"
 #import "SignUpViewController.h"
 
+#import <Parse/Parse.h>
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) UINavigationController *navController;
@@ -36,6 +38,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
+
+    [Parse setApplicationId:@"kkDmU3bzswvfLcOd1GI0lVUtZxKXOfWxblkTFLuB"
+                  clientKey:@"mXkHvFn6lUv23MBNgoBQTDyXn9lpAoseEQjThRKu"];
     
     return YES;
 }
@@ -56,13 +61,13 @@
 - (void)presentLoginViewController {
     
     LoginViewController *loginVC = [[LoginViewController alloc] init];
-    [self.navController presentViewController:loginVC animated:NO completion:nil];
+    [self.navController pushViewController:loginVC animated:NO];
 }
 
 - (void)presentSignUpViewController {
     
     SignUpViewController *signupVC = [[SignUpViewController alloc] init];
-    [self.navController presentViewController:signupVC animated:NO completion:nil];
+    [self.navController pushViewController:signupVC animated:NO];
 }
 
 - (void) logOut {

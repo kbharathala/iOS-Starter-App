@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 
+#import <Parse/Parse.h>
+
 @interface MainViewController ()
 
 @end
